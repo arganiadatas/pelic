@@ -1,12 +1,11 @@
 import { useState, useMemo } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { ContentCard } from "@/components/ContentCard";
 import { TopRankings } from "@/components/TopRankings";
 import { ContentDetail } from "@/components/ContentDetail";
-import { contentData } from "@/data/content";
-import { getOrCreateStats } from "@/lib/statsEngine";
 import { Category, RankedContent } from "@shared/schema";
 
 export default function Home() {
@@ -14,12 +13,21 @@ export default function Home() {
   const [selectedContent, setSelectedContent] = useState<RankedContent | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
 
-  const contentWithStats: RankedContent[] = useMemo(() => {
-    return contentData.map(content => ({
-      ...content,
-      stats: getOrCreateStats(content)
-    }));
-  }, []);
+  const { data: contentWithStats = [], isLoading } = useQuery<RankedContent[]>({
+    queryKey: ["/api/content"],
+  });
+
+  const { data: weeklyTop = [] } = useQuery<RankedContent[]>({
+    queryKey: ["/api/rankings/weekly"],
+  });
+
+  const { data: monthlyTop = [] } = useQuery<RankedContent[]>({
+    queryKey: ["/api/rankings/monthly"],
+  });
+
+  const { data: alltimeTop = [] } = useQuery<RankedContent[]>({
+    queryKey: ["/api/rankings/alltime"],
+  });
 
   const filteredContent = useMemo(() => {
     if (selectedCategory === "Todas") return contentWithStats;
@@ -27,26 +35,8 @@ export default function Home() {
   }, [contentWithStats, selectedCategory]);
 
   const categories: Category[] = useMemo(() => {
-    const unique = Array.from(new Set(contentData.map(c => c.category)));
+    const unique = Array.from(new Set(contentWithStats.map(c => c.category)));
     return unique.sort();
-  }, []);
-
-  const weeklyTop = useMemo(() => {
-    return [...contentWithStats]
-      .sort((a, b) => b.stats.weeklyViews + b.stats.weeklyLikes - (a.stats.weeklyViews + a.stats.weeklyLikes))
-      .slice(0, 10);
-  }, [contentWithStats]);
-
-  const monthlyTop = useMemo(() => {
-    return [...contentWithStats]
-      .sort((a, b) => b.stats.monthlyViews + b.stats.monthlyLikes - (a.stats.monthlyViews + a.stats.monthlyLikes))
-      .slice(0, 10);
-  }, [contentWithStats]);
-
-  const alltimeTop = useMemo(() => {
-    return [...contentWithStats]
-      .sort((a, b) => b.stats.views + b.stats.likes - (a.stats.views + a.stats.likes))
-      .slice(0, 10);
   }, [contentWithStats]);
 
   const handleContentClick = (content: RankedContent) => {
@@ -59,6 +49,17 @@ export default function Home() {
       handleContentClick(contentWithStats[0]);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Cargando contenido...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">

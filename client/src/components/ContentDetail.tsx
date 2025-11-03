@@ -1,10 +1,11 @@
 import { RankedContent } from "@shared/schema";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, X, Star, Eye, Heart, TrendingUp, Calendar, Clock, Users } from "lucide-react";
 import { soundManager } from "@/lib/soundEffects";
 import { motion } from "framer-motion";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface ContentDetailProps {
   content: RankedContent | null;
@@ -39,6 +40,11 @@ export function ContentDetail({ content, open, onClose }: ContentDetailProps) {
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl p-0 overflow-hidden bg-background border-0">
+        <VisuallyHidden>
+          <DialogTitle>{content.title}</DialogTitle>
+          <DialogDescription>{content.description}</DialogDescription>
+        </VisuallyHidden>
+        
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
