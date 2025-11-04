@@ -391,4 +391,19 @@ export const contentData: Content[] = [
     posterUrl: "https://imusic.b-cdn.net/images/item/original/825/5051561037825.jpg?peaky-blinders-2013-peaky-blinders-dvd&class=scaled&v=1382308494",
     seasons: 1
   },
+  {
+    id: "27",
+    type: "movie",
+    title: "Búsqueda implacable",
+    description: "El exagente de las fuerzas especiales de élite Bryan Millis se ve enredado en la trama de una organización criminal cuando intenta salvar a su hija Kim, pero solo tiene 96 horas para rescatarla antes de perder el rastro.",
+    category: "Drama",
+    qualityRating: 77,
+    hypeLevel: 95,
+    releaseDate: "2025-11-04",
+    director: "Pierre Morel",
+    cast: ["Liam Neeson", "Maggie Grace", "Famke Janssen..."],
+    production: "Netflix",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjk2MjhlZWUtNDY2MC00NDU4LTg0MWUtNWIwNTYxYzE4ZDk1XkEyXkFqcGc@._V1_.jpg",
+    duration: "1h 33m"
+  },
 ];
