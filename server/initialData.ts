@@ -403,7 +403,22 @@ export const contentData: Content[] = [
     director: "Pierre Morel",
     cast: ["Liam Neeson", "Maggie Grace", "Famke Janssen..."],
     production: "Netflix",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjk2MjhlZWUtNDY2MC00NDU4LTg0MWUtNWIwNTYxYzE4ZDk1XkEyXkFqcGc@._V1_.jpg",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BNzgwN2YzNjEtZjA2ZC00YTE1LWI4ZjEtZmFlNGU5MmIxNzFjXkEyXkFqcGc@._V1_.jpg",
+    duration: "1h 33m"
+  },
+  {
+    id: "28",
+    type: "movie",
+    title: "Toy Story 2",
+    description: "Cuando Andy se va de campamento dejando solos a los juguetes, Al McWhiggin, un compulsivo coleccionista de juguetes valiosos, secuestra a Woody. Buzz Lightyear y los demás juguetes tendrán que actuar con rapidez si quieren rescatarlo. Durante la operación de rescate no sólo tendrán que afrontar múltiples peligros, sino que también vivirán divertidas situaciones.",
+    category: "Aventura",
+    qualityRating: 92,
+    hypeLevel: 90,
+    releaseDate: "2025-11-07",
+    director: "John Lasseter",
+    cast: ["Sheriff Woody", "Buzz Lightyear"],
+    production: "Pixar Animation Studios",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BNzVmODlhMDEtY2YxZi00OTVjLTlkNTktN2Q2OTRlM2I4M2FhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     duration: "1h 33m"
   },
 ];
