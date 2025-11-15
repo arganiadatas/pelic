@@ -421,4 +421,19 @@ export const contentData: Content[] = [
     posterUrl: "https://m.media-amazon.com/images/M/MV5BNzVmODlhMDEtY2YxZi00OTVjLTlkNTktN2Q2OTRlM2I4M2FhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     duration: "1h 33m"
   },
+  {
+    id: "29",
+    type: "movie",
+    title: "Actividad Paranormal",
+    description: "Ryan y Emily se mudan a una nueva casa junto a su hija Leila, de 7 años. Allí encuentran una misteriosa cámara de vídeo que graba extrañas presencias. Además, Leila comienza a hablar con un amigo imaginario y a comportarse de forma desconcertante. Todo esto es el inicio de una pesadilla hecha realidad, ya que una entidad maligna y sobrenatural comienza a aterrorizarlos.",
+    category: "Horror",
+    qualityRating: 74,
+    hypeLevel: 82,
+    releaseDate: "2025-11-15",
+    director: "Gregory Plotkin",
+    cast: ["Katie Featherston", "Micah Sloat"],
+    production: "Blumhouse Productions",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjY1NjcxODQ4MV5BMl5BanBnXkFtZTcwMzUxNjM4Mg@@._V1_FMjpg_UX1000_.jpg",
+    duration: "1h 26m"
+  },
 ];
