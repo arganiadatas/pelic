@@ -436,4 +436,19 @@ export const contentData: Content[] = [
     posterUrl: "https://m.media-amazon.com/images/M/MV5BMjY1NjcxODQ4MV5BMl5BanBnXkFtZTcwMzUxNjM4Mg@@._V1_FMjpg_UX1000_.jpg",
     duration: "1h 26m"
   },
+  {
+    id: "30",
+    type: "series",
+    title: "Stranger Things",
+    description: "un grupo de amigos en el pueblo de Hawkins, Indiana, en los años 80, que se enfrentan a fuerzas sobrenaturales y a experimentos secretos del gobierno tras la misteriosa desaparición de uno de ellos",
+    category: "Horror",
+    qualityRating: 95,
+    hypeLevel: 90,
+    releaseDate: "2025-11-17",
+    director: "Matt Duffer, Ross Duffer, Kate Trefry, Justin Doble, Paul Dichter, Jessie Nickson-Lopez",
+    cast: ["Millie Bobby Brown", "Finn Wolfhard..."],
+    production: "Netflix",
+    posterUrl: "https://static.wikia.nocookie.net/netflix9203/images/1/12/Stranger_Things.png/revision/latest?cb=20200901053540&path-prefix=es",
+    seasons: 1
+  },
 ];
