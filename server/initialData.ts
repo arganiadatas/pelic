@@ -451,4 +451,19 @@ export const contentData: Content[] = [
     posterUrl: "https://static.wikia.nocookie.net/netflix9203/images/1/12/Stranger_Things.png/revision/latest?cb=20200901053540&path-prefix=es",
     seasons: 1
   },
+  {
+    id: "31",
+    type: "movie",
+    title: "Five Nights At Freddy's: The Movie",
+    description: "Five Nights at Freddy's 2 es una película de terror sobrenatural estadounidense de 2025 basada en la serie de videojuegos Five Nights at Freddy's de Scott Cawthon, y la secuela de Five Nights at Freddy's.​ La película está dirigida por Emma Tammi y escrita por Cawthon.",
+    category: "Terror",
+    qualityRating: 91,
+    hypeLevel: 98,
+    releaseDate: "2024-12-05",
+    director: "Emma Tammi",
+    cast: ["Josh Hutcherson", "Matthew Lillard", "Elizabeth Lail..."],
+    production: "Scott Movies",
+    posterUrl: "https://m.media-amazon.com/images/M/MV5BZmQ3NmIxNTgtYjFiNS00NzliLWI0YzAtZDkxY2E0YWIxZDEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    duration: "1h 44m"
+  },
 ];
